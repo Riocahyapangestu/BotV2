@@ -50,58 +50,6 @@ const getLevelingXp = (userId) => {
                 if (_level[i].jid === userId) {
                     position = i
                 }
-            })const {
-   WAConnection,
-   MessageType,
-   Presence,
-   MessageOptions,
-   Mimetype,
-   WALocationMessage,
-   WA_MESSAGE_STUB_TYPES,
-   ReconnectMode,
-   ProxyAgent,
-   GroupSettingChange,
-   waChatKey,
-   mentionedJid,
-   processTime,
-} = require("@adiwajshing/baileys")
-const qrcode = require("qrcode-terminal") 
-const moment = require("moment-timezone") 
-const fs = require("fs") 
-const { color, bgcolor } = require('./lib/color')
-const { help } = require('./lib/help')
-const { donasi } = require('./lib/donasi')
-const { fetchJson } = require('./lib/fetcher')
-const { recognize } = require('./lib/ocr')
-const { exec } = require("child_process")
-const { wait, simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom, banner, start, info, success, close } = require('./lib/functions')
-const tiktod = require('tiktok-scraper')
-const ffmpeg = require('fluent-ffmpeg')
-const { removeBackgroundFromImageFile } = require('remove.bg')
-const vcard = 'BEGIN:VCARD\n' 
-            + 'VERSION:3.0\n' 
-            + 'FN:Rio\n' 
-            + 'ORG: Pengembang Bot;\n' 
-            + 'TEL;type=CELL;type=VOICE;waid=62895605980121:+62 895-6059-80121\n' 
-            + 'END:VCARD' 
-prefix = '#'
-blocked = []          
-
-/*********** LOAD FILE ***********/
-const _leveling = JSON.parse(fs.readFileSync('./database/group/leveling.json'))
-const _level = JSON.parse(fs.readFileSync('./database/user/level.json'))
-const welkom = JSON.parse(fs.readFileSync('./database/bot/welkom.json'))
-const nsfw = JSON.parse(fs.readFileSync('./database/bot/nsfw.json'))
-const samih = JSON.parse(fs.readFileSync('./database/bot/simi.json'))
-/*********** END LOAD ***********/
-
-/********** FUNCTION ***************/
-const getLevelingXp = (userId) => {
-            let position = false
-            Object.keys(_level).forEach((i) => {
-                if (_level[i].jid === userId) {
-                    position = i
-                }
             })
             if (position !== false) {
                 return _level[position].xp
